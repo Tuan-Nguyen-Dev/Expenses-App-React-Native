@@ -8,18 +8,24 @@ import { GlobalStyles } from '../constants/styles';
 function ManageExpense({ route, navigation }) {
     const editedExpenseId = route.params?.expenseId;
     const isEditing = !!editedExpenseId;
-
+    // console.log('---->', isEditing);
     useLayoutEffect(() => {
         navigation.setOptions({
             title: isEditing ? 'Edit Expense' : 'Add Expense',
         });
     }, [navigation, isEditing]);
 
-    function deleteExpenseHandler() { }
+    function deleteExpenseHandler() {
+        navigation.goBack();
+    }
 
-    function cancelHandler() { }
+    function cancelHandler() {
+        navigation.goBack();
+    }
 
-    function confirmHandler() { }
+    function confirmHandler() {
+        navigation.goBack();
+    }
 
     return (
         <View style={styles.container}>
